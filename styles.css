@@ -1,0 +1,203 @@
+
+/* Custom styles for a Complete Aesthetic Soft UI (Neumorphism-inspired) Overhaul */
+
+:root {
+    /* Primary Colors - Calm and Professional Teal/Green */
+    --primary-color: #008080;      /* Deep Teal-Green (for buttons, icons, major titles) */
+    --secondary-color: #38a79d;    /* Medium Teal (for accents and secondary buttons) */
+    --text-dark: #2c3e50;          /* Dark Navy/Charcoal for text for contrast */
+    --text-light: #f7f9fc;         /* Light text for colored backgrounds */
+    
+    /* Background & Surface */
+    --background-light: #f7fcfb;   /* Very light, cool base background */
+    --surface-color: #ffffff;      /* Pure white for cards and forms */
+    
+    /* Shadows (Soft and Subtle for Neumorphism) */
+    --shadow-light: rgba(255, 255, 255, 0.9);
+    --shadow-dark: rgba(0, 0, 0, 0.1);
+    
+    /* Dashboard Card Colors (Professional and Distinct) */
+    --card-patients: #4CAF50;    /* Green */
+    --card-appointments: #00bcd4; /* Cyan */
+    --card-staff: #ff9800;       /* Amber */
+}
+
+body {
+    /* Consistent, clean font and background */
+    font-family: 'Poppins', sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    transition: background-color 0.4s;
+}
+
+/* Global Elements & Typography */
+.navbar-dark {
+    background-color: var(--primary-color) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: var(--text-light) !important;
+}
+
+/* Headings and Icons */
+h1, h2, .h5 {
+    font-weight: 700;
+}
+
+.section h2 {
+    color: var(--primary-color);
+    border-bottom: 2px solid #e0e6eb;
+    padding-bottom: 10px;
+    margin-bottom: 25px;
+}
+.section h2 i {
+    color: var(--secondary-color);
+    margin-right: 10px;
+}
+
+
+/* ---------------------------------------------------- */
+/* --- Login & Auth Page Layout (Frames) --- */
+/* ---------------------------------------------------- */
+
+#auth-section .card {
+    /* Aesthetic, elevated look */
+    background-color: var(--surface-color);
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2); 
+    padding: 40px;
+}
+
+#auth-section h1 {
+    color: var(--primary-color);
+    margin-bottom: 25px;
+}
+
+/* ---------------------------------------------------- */
+/* --- Card and List Elements --- */
+/* ---------------------------------------------------- */
+
+.card {
+    background-color: var(--surface-color);
+    border-radius: 18px;
+    border: none;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.05), -4px -4px 10px var(--shadow-light); 
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 6px 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* List Items (for Patients/Appointments/Staff) */
+.list-group-item {
+    background-color: #fcfcfc;
+    border-radius: 12px;
+    margin-bottom: 10px;
+    border: 1px solid #eee;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.03);
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+    padding: 15px;
+}
+
+.list-group-item:hover {
+    background-color: #edf2f7;
+    border-color: var(--secondary-color);
+}
+
+/* ---------------------------------------------------- */
+/* --- Dashboard Card Color Overrides --- */
+/* ---------------------------------------------------- */
+
+.card-title, .card-text { color: var(--text-light); }
+
+/* Total Patients Card (Green) */
+.col-md-4:nth-child(1) .card { background-color: var(--card-patients) !important; }
+
+/* Total Appointments Card (Cyan/Teal) */
+.col-md-4:nth-child(2) .card { background-color: var(--card-appointments) !important; }
+
+/* Staff Members Card (Amber) */
+.col-md-4:nth-child(3) .card { 
+    background-color: var(--card-staff) !important; 
+    color: var(--text-dark); 
+}
+.col-md-4:nth-child(3) .card .card-text,
+.col-md-4:nth-child(3) .card .card-title {
+    color: var(--text-dark); /* Ensure text is dark on light amber */
+}
+
+
+/* ---------------------------------------------------- */
+/* --- Forms, Labels, and Inputs --- */
+/* ---------------------------------------------------- */
+
+/* Text Labels */
+.form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 5px;
+}
+
+/* Input Fields (Recessed, Soft Look) */
+.form-control {
+    border-radius: 12px;
+    padding: 14px 18px;
+    border: none;
+    background-color: #ebf0f5; 
+    box-shadow: inset 3px 3px 6px rgba(0, 0, 0, 0.05);
+    color: var(--text-dark);
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: var(--surface-color);
+    box-shadow: 0 0 0 3px rgba(0, 128, 128, 0.2); 
+    border: 1px solid var(--primary-color);
+}
+
+/* Buttons (Aesthetic, Elevated) */
+.btn {
+    border-radius: 12px;
+    font-weight: 600;
+    padding: 12px 25px;
+    border: none;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.btn-success {
+    background-color: var(--card-patients) !important;
+    border-color: var(--card-patients) !important;
+}
+
+.btn-secondary {
+    background-color: var(--secondary-color) !important; 
+    border-color: var(--secondary-color) !important;
+}
+
+.btn:active {
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
+}
+
+/* Spinners */
+.spinner-border {
+    color: var(--primary-color) !important;
+}
+
+/* Hide spinners initially */
+#patient-spinner, #appointment-spinner, #staff-spinner {
+    display: none;
+}
